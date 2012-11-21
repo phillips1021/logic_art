@@ -1,2 +1,1 @@
-logic_art
-=========
+Programming projects required by Logic and Art as part of my job application.
