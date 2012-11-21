@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>name.brucephillips</groupId>
+	<artifactId>FixedPoint</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Fixed Point</name>
+	<description>Java application that meets the requirements of the Logic &amp; Art programming challenge 1a.</description>
+	<developers>
+		<developer>
+			<id>Bruce</id>
+			<name>Bruce Phillips</name>
+			<email>BruceAPhillips@gmail.com</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<organization>http://www.brucephillips.name/blog</organization>
+			<timezone>-5</timezone>
+		</developer>
+	</developers>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>
