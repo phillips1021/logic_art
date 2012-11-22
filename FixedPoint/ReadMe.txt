@@ -13,4 +13,11 @@ methods to understand how to use it.  Also review the
 unit test in the test class FixedPointTest (src/test/java) 
 for examples of using the FixedPoint class.
 
+The project can be used to create a runnable Java jar file,
+with the main class being FixedPointApp (src/main/java).  You
+can run the FixedPoint.jar file in a terminal window by 
+executing java -jar FixedPoint.jar--output will display in 
+the terminal window.
+
+
 
