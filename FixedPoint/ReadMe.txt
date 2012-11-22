@@ -19,5 +19,9 @@ can run the FixedPoint.jar file in a terminal window by
 executing java -jar FixedPoint.jar--output will display in 
 the terminal window.
 
+The project is structured as a Maven project and you should 
+be able to import the source code into any Maven aware IDE
+such as Eclipse or NetBeans.
+
 
 
