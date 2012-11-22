@@ -7,18 +7,21 @@ import name.brucephillips.model.FixedPoint;
  * @author brucephillips
  *
  */
-public class FixedPointApp {
+public class FixedPointApp 
+{
 
 	/**
 	 * Convert from a FixedPoint value stored in a 32-bit integer to a float value and
 	 * from a float value to a FixedPoint value stored in a 32-bit integer.
 	 * @param args - not used
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		
 		int [] fixedPointPackedArray = {0x00008000,0x80008000,0x00010000,0x80014000,0x000191eb,0x00327eb8};
 		
-		for ( int fixedPointPacked : fixedPointPackedArray ) {
+		for ( int fixedPointPacked : fixedPointPackedArray ) 
+		{
 			
 			FixedPoint fixedPoint = new FixedPoint( fixedPointPacked ) ;
 
@@ -31,7 +34,8 @@ public class FixedPointApp {
 		
 		float [] floatValuesArray = {1.0f, -1.0f, 2.0f, -2.5f, 3.14f, 100.99f};
 		
-		for (float floatValue : floatValuesArray) {
+		for (float floatValue : floatValuesArray) 
+		{
 			
 			FixedPoint fixedPoint = new FixedPoint( floatValue );
 			
@@ -43,7 +47,8 @@ public class FixedPointApp {
 		
 		System.out.println("The next usage of FixedPoint demonstrates what happens if the float value is too large or too small.");
 		
-		try {
+		try 
+		{
 			
 			float aBigFloat = 999999999999.99999f;
 
@@ -53,7 +58,9 @@ public class FixedPointApp {
 		
 			System.out.println();
 			
-		} catch (Exception ex) {
+		} 
+		catch (Exception ex) 
+		{
 			
 			System.out.println("An error occurred - " + ex.getMessage() );
 			

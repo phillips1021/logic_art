@@ -11,7 +11,8 @@ package name.brucephillips.model;
  * @author brucephillips
  *
  */
-public class FixedPoint {
+public class FixedPoint 
+{
 	
 	private static final float MAX_VALUE = 65535.99997f;
 	
@@ -32,7 +33,8 @@ public class FixedPoint {
 	 * are the integer portion, and last 15 bits are the
 	 * fraction portion.
 	 */
-	public FixedPoint( int fixedPointPacked) {
+	public FixedPoint( int fixedPointPacked) 
+	{
 		
 		isNegative = isFixedPointPackedNegative(fixedPointPacked) ;
 		
@@ -48,9 +50,11 @@ public class FixedPoint {
 	 * of a FixedPoint object.
 	 * @param floatValue 
 	 */
-	public FixedPoint (float floatValue) {
+	public FixedPoint (float floatValue) 
+	{
 		
-		if (floatValue > MAX_VALUE ||floatValue < MIN_VALUE ) {
+		if (floatValue > MAX_VALUE ||floatValue < MIN_VALUE ) 
+		{
 			
 			throw  new IllegalArgumentException("The floatValue you provided " + 
 			  floatValue + " is too large or too small.  The float value must be between " +
@@ -58,13 +62,16 @@ public class FixedPoint {
 			
 		}
 		
-		if (floatValue < 0 ) {
+		if (floatValue < 0 ) 
+		{
 			
 			isNegative = true ;
 			
 			floatValue = Math.abs(floatValue);
 			
-		} else {
+		} 
+		else 
+		{
 			
 			isNegative = false ;
 		}
@@ -86,7 +93,8 @@ public class FixedPoint {
      * @return true if fixedPointPacked is storing a negative value 
      * otherwise false
      */
-	public static boolean isFixedPointPackedNegative(int fixedPointPacked) {
+	public static boolean isFixedPointPackedNegative(int fixedPointPacked) 
+	{
 
 		return (fixedPointPacked >> 31) < 0 ? true : false ;
 	
@@ -102,17 +110,21 @@ public class FixedPoint {
 	 * fraction portion.
 	 * @return integer value stored in the fixedPointPacked
 	 */
-	public static int getIntegerPortionFromFixedPointPacked(int fixedPointPacked) {
+	public static int getIntegerPortionFromFixedPointPacked(int fixedPointPacked) 
+	{
 		
 		int integerPortion = 0;
 		
-		if ( isFixedPointPackedNegative(fixedPointPacked) ) {
+		if ( isFixedPointPackedNegative(fixedPointPacked) ) 
+		{
 			
 			integerPortion = fixedPointPacked << 1;
 			
 			integerPortion = integerPortion >>> 16;
 			
-		} else {
+		} 
+		else 
+		{
 
 			integerPortion = fixedPointPacked >> 15 ;
 		}
@@ -130,7 +142,8 @@ public class FixedPoint {
 	 * fraction portion.
 	 * @return fraction value stored in the provided fixedPointPacked
 	 */
-	public static float getFractionPortionFromFixedPointPacked(int fixedPointPacked) {
+	public static float getFractionPortionFromFixedPointPacked(int fixedPointPacked) 
+	{
 		
 		float fractionPortion = 0.0f;
 		
@@ -149,11 +162,13 @@ public class FixedPoint {
 	 * Gets the float value of this FixedPoint object.
 	 * @return float value
 	 */
-	public float getFloatValue() {
+	public float getFloatValue() 
+	{
 		
 		float floatValue = integerPortion + fractionPortion ;
 		
-		if ( isNegative ) {
+		if ( isNegative ) 
+		{
 			
 			floatValue = -floatValue ;
 			
@@ -172,13 +187,15 @@ public class FixedPoint {
 	 * @return 32-bit integer representing the
 	 * float value packed into it.
 	 */
-	public int getFixedPointPacked() {
+	public int getFixedPointPacked() 
+	{
 		
 		int fixedPointPacked = integerPortion << 15;
 		
 		fixedPointPacked = fixedPointPacked | (int) (fractionPortion *  (float)(0x8000)  );
 		
-		if (isNegative) {
+		if (isNegative) 
+		{
 			
 				fixedPointPacked = (fixedPointPacked | 0x80000000);
 		}
@@ -191,7 +208,8 @@ public class FixedPoint {
 	 * Returns the float value as a String.
 	 * @return float value as a String
 	 */
-	public String toFloatString() {
+	public String toFloatString() 
+	{
 		
 		return String.valueOf( getFloatValue() ) ;
 		
@@ -199,33 +217,40 @@ public class FixedPoint {
 
 	
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "FixedPoint [integerPortion=" + integerPortion
 				+ ", fractionPortion=" + fractionPortion + ", isNegative="
 				+ isNegative + "]";
 	}
 
-	public int getIntegerPortion() {
+	public int getIntegerPortion() 
+	{
 		return integerPortion;
 	}
 
-	public void setIntegerPortion(int integerPortion) {
+	public void setIntegerPortion(int integerPortion) 
+	{
 		this.integerPortion = integerPortion;
 	}
 
-	public float getFractionPortion() {
+	public float getFractionPortion() 
+	{
 		return fractionPortion;
 	}
 
-	public void setFractionPortion(float fractionPortion) {
+	public void setFractionPortion(float fractionPortion) 
+	{
 		this.fractionPortion = fractionPortion;
 	}
 
-	public boolean isNegative() {
+	public boolean isNegative() 
+	{
 		return isNegative;
 	}
 
-	public void setNegative(boolean isNegative) {
+	public void setNegative(boolean isNegative) 
+	{
 		this.isNegative = isNegative;
 	}
 	
