@@ -1,7 +1,7 @@
 
 package name.brucephillips.fileparser.model;
 
-import java.util.List;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -15,15 +15,17 @@ public class Section
 	private String sectionName ;
 	
 	
-	private List <Map<String, String>> sectionDataList ;
-
-
-	@Override
-	public String toString() 
-	{
-		return "Section [sectionName=" + sectionName + ", sectionDataList="
-				+ sectionDataList + "]";
+	private Map<String, String> sectionDataMap ;
+	
+	
+	public Section( String sectionName ) {
+		
+		this.sectionName = sectionName ;
+		
+		sectionDataMap = new LinkedHashMap<String,String>();
+	
 	}
+
 
 
 	public String getSectionName() 
@@ -38,22 +40,18 @@ public class Section
 	}
 
 
-	public List<Map<String, String>> getSectionDataList() 
-	{
-		return sectionDataList;
+	public Map<String, String> getSectionDataMap() {
+		return sectionDataMap;
 	}
 
 
-	public void setSectionDataList(List<Map<String, String>> sectionDataList) 
-	{
-		this.sectionDataList = sectionDataList;
+	public void setSectionDataMap(Map<String, String> sectionDataMap) {
+		this.sectionDataMap = sectionDataMap;
 	}
 	
 	
-
-
-
-	
-	
-
 }
+	
+	
+
+
